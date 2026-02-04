@@ -2,34 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TechPulse News – Latest Technology Updates</title>
-  <meta name="description" content="TechPulse News provides latest technology news, AI updates, hardware reviews, and insights for tech enthusiasts.">
+  <title>TechPulse News – Latest Technology & AI Updates</title>
+  <meta name="description" content="TechPulse News provides the latest technology news, AI updates, hardware reviews, and insights for tech enthusiasts.">
   <meta name="keywords" content="TechPulse News, technology news, AI updates, computer tech, latest tech, hardware, software">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Roboto', sans-serif; margin:0; background:#f4f4f4; color:#333; }
+
+    /* HEADER */
     header { background:#1E1E2F; color:#fff; padding:20px 0; text-align:center; }
     nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; }
     nav a:hover { color:#1E90FF; }
-    .hero { position:relative; text-align:center; color:white; margin-bottom:40px; }
-    .hero img { width:100%; max-height:400px; object-fit:cover; filter: brightness(70%); }
-    .hero h1 { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:3rem; }
-    .articles { display:grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap:20px; max-width:1200px; margin:0 auto; padding:0 20px; }
-    .card { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-    .card img { width:100%; height:200px; object-fit:cover; }
-    .card-content { padding:15px; }
+
+    /* HERO SECTION */
+    .hero {
+      height: 400px;
+      background-image: url('images/hero-bg.jpg'); /* YOUR uploaded image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero::before {
+      content:"";
+      position:absolute;
+      top:0; left:0; right:0; bottom:0;
+      background-color: rgba(0,0,0,0.5); /* dark overlay for readability */
+    }
+    .hero h1 {
+      position: relative;
+      color: white;
+      font-size: 3rem;
+      text-align: center;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      z-index: 1;
+    }
+
+    /* ARTICLES SECTION */
+    .articles { 
+      display:grid; 
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); 
+      gap:20px; 
+      max-width:1200px; 
+      margin:40px auto; 
+      padding:0 20px; 
+    }
+    .card {
+      background:#333; /* fallback color */
+      border-radius:10px;
+      min-height:250px;
+      color:white;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:15px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .card::before {
+      content:"";
+      position:absolute;
+      top:0; left:0; right:0; bottom:0;
+      background-color: rgba(0,0,0,0.4); /* overlay for text readability */
+      border-radius:10px;
+      z-index:0;
+    }
+    .card-content { position:relative; z-index:1; }
     .card-content h3 { margin:0 0 10px 0; font-size:1.2rem; }
-    .card-content p { font-size:0.95rem; color:#555; }
+    .card-content p { font-size:0.95rem; }
     .card-content a { display:inline-block; margin-top:10px; color:#1E90FF; text-decoration:none; font-weight:bold; }
-    .card-content a:hover { color:#0066cc; }
+    .card-content a:hover { color:#00aaff; }
+
+    /* CONTACT SECTION */
     .contact-info { text-align:center; margin:40px 0; }
     .contact-info p { margin:5px 0; font-weight:bold; }
+
+    /* FOOTER */
     footer { background:#f1f1f1; text-align:center; padding:20px; margin-top:40px; }
     footer a { margin:0 10px; color:#1E90FF; text-decoration:none; }
     footer a:hover { color:#0066cc; }
+
+    /* RESPONSIVE */
     @media screen and (max-width: 600px) {
       nav a { display:block; margin:10px 0; }
+      .hero h1 { font-size:2rem; }
     }
   </style>
 </head>
@@ -46,34 +106,30 @@
 </header>
 
 <section class="hero">
-  <img src="https://images.unsplash.com/photo-1581091870626-9ae4e4dece35?auto=format&fit=crop&w=1400&q=80" alt="Featured AI News">
   <h1>Latest Technology & AI News</h1>
 </section>
 
 <section class="articles">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981e?auto=format&fit=crop&w=800&q=60" alt="AI Tools">
+  <div class="card" style="background-image:url('images/ai-bg.jpg');">
     <div class="card-content">
       <h3>Top AI Tools in 2026</h3>
-      <p>Discover the top AI-powered tools that are transforming how developers, designers, and tech enthusiasts work and innovate.</p>
+      <p>Discover the AI tools transforming development and tech workflows.</p>
       <a href="#">Read more</a>
     </div>
   </div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1581092580490-6b78f5d9c6d5?auto=format&fit=crop&w=800&q=60" alt="Hardware Update">
+  <div class="card" style="background-image:url('images/hardware-bg.jpg');">
     <div class="card-content">
       <h3>Next-Gen Hardware Updates</h3>
-      <p>Explore the latest hardware releases, from high-performance CPUs to cutting-edge GPUs, shaping the computing landscape.</p>
+      <p>Explore the latest CPUs, GPUs, and tech hardware innovations.</p>
       <a href="#">Read more</a>
     </div>
   </div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1581092787637-c71f8f91b3a1?auto=format&fit=crop&w=800&q=60" alt="Cybersecurity News">
+  <div class="card" style="background-image:url('images/cybersecurity-bg.jpg');">
     <div class="card-content">
       <h3>Cybersecurity Trends in 2026</h3>
-      <p>Understand emerging threats and best practices to protect data in a rapidly evolving digital world.</p>
+      <p>Learn about emerging threats and best practices in cybersecurity.</p>
       <a href="#">Read more</a>
     </div>
   </div>
