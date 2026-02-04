@@ -2,180 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TechPulse News – Computer Technology Updates</title>
-  <meta name="description" content="Latest computer technology news, AI updates, software releases, and tech blogs in simple English.">
+  <title>TechPulse News – Latest Technology Updates</title>
+  <meta name="description" content="TechPulse News provides latest technology news, AI updates, hardware reviews, and insights for tech enthusiasts.">
+  <meta name="keywords" content="TechPulse News, technology news, AI updates, computer tech, latest tech, hardware, software">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CSS Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Body */
-    body {
-      font-family: 'Arial', sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      background-color: #F4F6F8;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* Header */
-    header {
-      background-color: #1E1E2F;
-      color: #ffffff;
-      padding: 25px 20px;
-      text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin: 5px 0 0 0;
-      font-size: 1.1rem;
-      color: #d1d1d1;
-    }
-
-    /* Navigation */
-    nav {
-      text-align: center;
-      margin: 20px 0;
-      background-color: #ffffff;
-      padding: 10px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    nav a {
-      margin: 0 20px;
-      text-decoration: none;
-      color: #1E1E2F;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #1E90FF;
-    }
-
-    /* Articles */
-    main h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #1E1E2F;
-    }
-    article {
-      background-color: #ffffff;
-      padding: 20px;
-      margin-bottom: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    article:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    article h3 {
-      color: #1E1E2F;
-      font-size: 1.5rem;
-    }
-    article p {
-      font-size: 1rem;
-      margin: 10px 0;
-    }
-    article p span {
-      font-weight: bold;
-      color: #1E90FF;
-    }
-    article a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #ffffff;
-      background-color: #1E90FF;
-      padding: 8px 15px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-    article a:hover {
-      background-color: #0066cc;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #555;
-      padding: 20px;
-    }
-    footer a {
-      text-decoration: none;
-      color: #1E90FF;
-      font-weight: bold;
-      margin: 0 8px;
-      transition: color 0.3s;
-    }
-    footer a:hover {
-      color: #0066cc;
-    }
-
-    /* Responsive */
+    body { font-family: 'Roboto', sans-serif; margin:0; background:#f4f4f4; color:#333; }
+    header { background:#1E1E2F; color:#fff; padding:20px 0; text-align:center; }
+    nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; }
+    nav a:hover { color:#1E90FF; }
+    .hero { position:relative; text-align:center; color:white; margin-bottom:40px; }
+    .hero img { width:100%; max-height:400px; object-fit:cover; filter: brightness(70%); }
+    .hero h1 { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:3rem; }
+    .articles { display:grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap:20px; max-width:1200px; margin:0 auto; padding:0 20px; }
+    .card { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+    .card img { width:100%; height:200px; object-fit:cover; }
+    .card-content { padding:15px; }
+    .card-content h3 { margin:0 0 10px 0; font-size:1.2rem; }
+    .card-content p { font-size:0.95rem; color:#555; }
+    .card-content a { display:inline-block; margin-top:10px; color:#1E90FF; text-decoration:none; font-weight:bold; }
+    .card-content a:hover { color:#0066cc; }
+    .contact-info { text-align:center; margin:40px 0; }
+    .contact-info p { margin:5px 0; font-weight:bold; }
+    footer { background:#f1f1f1; text-align:center; padding:20px; margin-top:40px; }
+    footer a { margin:0 10px; color:#1E90FF; text-decoration:none; }
+    footer a:hover { color:#0066cc; }
     @media screen and (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
+      nav a { display:block; margin:10px 0; }
     }
   </style>
-
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>TechPulse News</h1>
-    <p>Your trusted source for <span style="color:#1E90FF;">computer technology</span> news & blogs</p>
-  </header>
-
-  <!-- Navigation -->
+<header>
+  <h1>TechPulse News</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
   </nav>
+</header>
 
-  <!-- Main Content -->
-  <main>
-    <h2>Latest Technology News</h2>
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1581091870626-9ae4e4dece35?auto=format&fit=crop&w=1400&q=80" alt="Featured AI News">
+  <h1>Latest Technology & AI News</h1>
+</section>
 
-    <!-- Article 1 -->
-    <article>
-      <h3>Top 5 <span>AI Tools</span> Every Computer Enthusiast Must Know in 2026</h3>
-      <p>AI is transforming <span>computer technology</span> rapidly. These 5 AI tools can help you <span>code faster</span>, <span>design smarter</span>, and stay ahead in the tech world. From AI-assisted programming to automated system optimization, discover how to leverage these tools today.</p>
+<section class="articles">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981e?auto=format&fit=crop&w=800&q=60" alt="AI Tools">
+    <div class="card-content">
+      <h3>Top AI Tools in 2026</h3>
+      <p>Discover the top AI-powered tools that are transforming how developers, designers, and tech enthusiasts work and innovate.</p>
       <a href="#">Read more</a>
-    </article>
+    </div>
+  </div>
 
-    <!-- Article 2 -->
-    <article>
-      <h3>How <span>AI</span> Is Transforming <span>Computer Technology</span> in 2026</h3>
-      <p><span>Artificial Intelligence</span> is rapidly changing the world of computer technology. From smarter <span>software</span> to faster <span>hardware</span>, AI is reshaping how we use computers and automate tasks efficiently.</p>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1581092580490-6b78f5d9c6d5?auto=format&fit=crop&w=800&q=60" alt="Hardware Update">
+    <div class="card-content">
+      <h3>Next-Gen Hardware Updates</h3>
+      <p>Explore the latest hardware releases, from high-performance CPUs to cutting-edge GPUs, shaping the computing landscape.</p>
       <a href="#">Read more</a>
-    </article>
+    </div>
+  </div>
 
-    <!-- Article 3 -->
-    <article>
-      <h3>Windows Latest Update: <span>New Features</span> Explained</h3>
-      <p>Microsoft has released a new <span>Windows update</span> focusing on <span>performance</span>, <span>security</span>, and AI-powered tools. Here is a simple breakdown of what users need to know and how it can improve productivity.</p>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1581092787637-c71f8f91b3a1?auto=format&fit=crop&w=800&q=60" alt="Cybersecurity News">
+    <div class="card-content">
+      <h3>Cybersecurity Trends in 2026</h3>
+      <p>Understand emerging threats and best practices to protect data in a rapidly evolving digital world.</p>
       <a href="#">Read more</a>
-    </article>
+    </div>
+  </div>
+</section>
 
-  </main>
+<section class="contact-info">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:s60930694@gmail.com">s60930694@gmail.com</a></p>
+  <p>Phone: <a href="tel:+923054538756">+92 305 4538756</a></p>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 TechPulse News</p
+<footer>
+  <p>© 2026 TechPulse News</p>
+  <p>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About Us</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="privacy.html">Privacy Policy</a>
+  </p>
+</footer>
+
+</body>
+</html>
