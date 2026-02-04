@@ -4,115 +4,178 @@
   <meta charset="UTF-8">
   <title>TechPulse News – Computer Technology Updates</title>
   <meta name="description" content="Latest computer technology news, AI updates, software releases, and tech blogs in simple English.">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background-color: #F9F9F9;
-    color: #333333;
-  }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  header {
-    background-color: #1E1E2F;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-  }
+  <!-- CSS Styles -->
+  <style>
+    /* Body */
+    body {
+      font-family: 'Arial', sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background-color: #F4F6F8;
+      color: #333;
+      line-height: 1.6;
+    }
 
-  nav {
-    text-align: center;
-    margin: 20px 0;
-  }
+    /* Header */
+    header {
+      background-color: #1E1E2F;
+      color: #ffffff;
+      padding: 25px 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin: 5px 0 0 0;
+      font-size: 1.1rem;
+      color: #d1d1d1;
+    }
 
-  nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #1E1E2F;
-    font-weight: bold;
-  }
+    /* Navigation */
+    nav {
+      text-align: center;
+      margin: 20px 0;
+      background-color: #ffffff;
+      padding: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #1E1E2F;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #1E90FF;
+    }
 
-  article {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    background-color: white;
-  }
+    /* Articles */
+    main h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1E1E2F;
+    }
+    article {
+      background-color: #ffffff;
+      padding: 20px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    article h3 {
+      color: #1E1E2F;
+      font-size: 1.5rem;
+    }
+    article p {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+    article p span {
+      font-weight: bold;
+      color: #1E90FF;
+    }
+    article a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #ffffff;
+      background-color: #1E90FF;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    article a:hover {
+      background-color: #0066cc;
+    }
 
-  article a {
-    color: #1E90FF;
-    text-decoration: none;
-    font-weight: bold;
-  }
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+      padding: 20px;
+    }
+    footer a {
+      text-decoration: none;
+      color: #1E90FF;
+      font-weight: bold;
+      margin: 0 8px;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #0066cc;
+    }
 
-  footer {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 14px;
-    color: #555;
-  }
-
-  footer a {
-    text-decoration: none;
-    color: #1E90FF;
-  }
-</style>
+    /* Responsive */
+    @media screen and (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
 
 </head>
+<body>
 
-<body style="font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px;">
-<nav style="text-align:center; margin-bottom:20px;">
-  <a href="index.html" style="margin:0 15px;">Home</a>
-  <a href="about.html" style="margin:0 15px;">About Us</a>
-  <a href="contact.html" style="margin:0 15px;">Contact Us</a>
-  <a href="privacy.html" style="margin:0 15px;">Privacy Policy</a>
-</nav>
-
+  <!-- Header -->
   <header>
     <h1>TechPulse News</h1>
-    <p>Your trusted source for computer technology news & blogs</p>
-    <hr>
+    <p>Your trusted source for <span style="color:#1E90FF;">computer technology</span> news & blogs</p>
   </header>
 
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
+
+  <!-- Main Content -->
   <main>
     <h2>Latest Technology News</h2>
-<article>
-  <h3>Top 5 AI Tools Every Computer Enthusiast Must Know in 2026</h3>
-  <p>AI is transforming computer technology rapidly. These 5 AI tools can help you code faster, design smarter, and stay ahead in the tech world. From AI-assisted programming to automated system optimization, discover how to leverage these tools today.</p>
-  <a href="#">Read more</a>
-</article>
 
-<hr>
-
+    <!-- Article 1 -->
     <article>
-      <h3>How AI Is Transforming Computer Technology in 2026</h3>
-      <p>Artificial Intelligence is rapidly changing the world of computer technology. From smarter software to faster hardware, AI is reshaping how we use computers...</p>
+      <h3>Top 5 <span>AI Tools</span> Every Computer Enthusiast Must Know in 2026</h3>
+      <p>AI is transforming <span>computer technology</span> rapidly. These 5 AI tools can help you <span>code faster</span>, <span>design smarter</span>, and stay ahead in the tech world. From AI-assisted programming to automated system optimization, discover how to leverage these tools today.</p>
       <a href="#">Read more</a>
     </article>
 
-    <hr>
-
+    <!-- Article 2 -->
     <article>
-      <h3>Windows Latest Update: New Features Explained</h3>
-      <p>Microsoft has released a new Windows update focusing on performance, security, and AI-powered tools. Here is a simple breakdown of what users need to know...</p>
+      <h3>How <span>AI</span> Is Transforming <span>Computer Technology</span> in 2026</h3>
+      <p><span>Artificial Intelligence</span> is rapidly changing the world of computer technology. From smarter <span>software</span> to faster <span>hardware</span>, AI is reshaping how we use computers and automate tasks efficiently.</p>
       <a href="#">Read more</a>
     </article>
+
+    <!-- Article 3 -->
+    <article>
+      <h3>Windows Latest Update: <span>New Features</span> Explained</h3>
+      <p>Microsoft has released a new <span>Windows update</span> focusing on <span>performance</span>, <span>security</span>, and AI-powered tools. Here is a simple breakdown of what users need to know and how it can improve productivity.</p>
+      <a href="#">Read more</a>
+    </article>
+
   </main>
 
-  <footer style="margin-top:40px;">
-    <hr>
-    <p>© 2026 TechPulse News</p>
-    <p>
-      <a href="about.html">About</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="privacy.html">Privacy Policy</a>
-    </p>
-  </footer>
-
-</body>
-</html>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 TechPulse News</p
