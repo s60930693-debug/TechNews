@@ -3,19 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TechPulse News – Latest Technology & Research</title>
+  <title>TechPulse News – Computer Technology Research</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
 
     body {
-      background: #0b0f19;
-      color: #ffffff;
+      background: #f8fafc;
+      color: #0f172a;
       line-height: 1.7;
     }
 
@@ -24,8 +19,9 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e7eb;
     }
 
     .nav {
@@ -40,24 +36,24 @@
     .logo {
       font-size: 24px;
       font-weight: bold;
+      color: #0f172a;
     }
 
     nav a {
-      color: #fff;
+      color: #0f172a;
       margin-left: 22px;
       text-decoration: none;
       font-size: 15px;
+      font-weight: 500;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { text-decoration: underline; }
 
     /* HERO */
     .hero {
-      min-height: 85vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
-      url('https://images.unsplash.com/photo-1518770660439-4636190af475') center/cover no-repeat;
+      min-height: 90vh;
+      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.95)),
+      url('https://images.unsplash.com/photo-1526378722443-4e39b8c79c5c') center/cover no-repeat;
       display: flex;
       align-items: center;
     }
@@ -75,13 +71,12 @@
 
     .hero p {
       font-size: 18px;
-      color: #d1d5db;
+      color: #334155;
     }
 
-    /* BUTTON */
     .btn {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 25px;
       padding: 14px 28px;
       background: #2563eb;
       color: #fff;
@@ -90,58 +85,53 @@
       font-weight: bold;
     }
 
-    .btn:hover {
-      background: #1d4ed8;
-    }
+    .btn:hover { background: #1d4ed8; }
 
-    /* ARTICLES GRID */
+    /* ARTICLE */
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
-      padding: 60px 25px;
+      padding: 70px 25px;
     }
 
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .article-preview {
-      background: #1b1f33;
-      padding: 22px;
-      border-radius: 14px;
-      transition: transform 0.3s;
-    }
-
-    .article-preview:hover {
-      transform: translateY(-6px);
+    .article-preview h2 {
+      font-size: 34px;
+      margin-bottom: 15px;
     }
 
     .article-preview img {
       width: 100%;
       border-radius: 12px;
-      margin: 15px 0;
-    }
-
-    .article-preview h2 {
-      font-size: 22px;
-      margin-bottom: 12px;
+      margin: 30px 0;
     }
 
     .article-preview p {
-      color: #d1d5db;
-      font-size: 15px;
+      color: #334155;
+      font-size: 17px;
+    }
+
+    /* FULL ARTICLE */
+    #full-article {
+      display: none;
+      margin-top: 50px;
     }
 
     footer {
-      background: #020617;
+      background: #f1f5f9;
       text-align: center;
       padding: 30px;
-      color: #9ca3af;
-      margin-top: 60px;
+      color: #475569;
+      border-top: 1px solid #e5e7eb;
     }
   </style>
+
+  <script>
+    function toggleArticle() {
+      const article = document.getElementById('full-article');
+      article.style.display = 'block';
+      article.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </head>
 
 <body>
@@ -160,47 +150,79 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Latest Technology News, Research & Insights</h1>
-    <p>
-      Stay updated with smartphone leaks, cybersecurity alerts, AI research, and the future of modern technology.
-    </p>
+    <h1>When Automation Breaks: Why Modern Networking Research Needs a New Workflow Paradigm</h1>
+    <p>Deep research into fragile automation, reproducible data generation, and the future of application-aware networking experiments.</p>
+    <a class="btn" onclick="toggleArticle()">Read Full Research</a>
   </div>
 </section>
 
 <section class="container">
-  <div class="articles-grid">
+  <div class="article-preview">
+    <h2>Research Overview</h2>
+    <img src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2" alt="Man using computer">
+    <p>
+      Modern networking research increasingly depends on automation for data generation, experimentation, and supervised learning. However, as applications evolve rapidly, traditional automation approaches fail to keep pace.
+    </p>
+  </div>
 
-    <!-- ANDROID SECURITY -->
+  <div id="full-article">
+    <h2>The Full Research Article</h2>
+    <p>
+      Imagine running a careful measurement study to understand how an application behaves under different network conditions... 
+      <br><br>
+      This article explores the hidden cost of brittle automation, the challenges of reproducibility, and introduces NetGent — a deterministic, scalable workflow synthesis system designed for modern networking research.
+      <br><br>
+      NetGent decouples workflow intent from execution, enabling researchers to regenerate workflows as applications evolve without sacrificing consistency or scale. By synthesizing executable state machines from natural-language workflow definitions, NetGent offers a new paradigm for realistic, repeatable application traffic generation.
+      <br><br>
+      This research highlights why automation tooling must evolve alongside applications themselves — and why treating data generation as a first-class system is essential for the future of networking research.
+    </p>
+  </div>
+  
+  <section class="container">
     <div class="article-preview">
       <h2>Android Security Alert: Over 40% of Phones at Risk</h2>
-      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Android security">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Android phone security risk">
       <p>
-        Google confirms millions of Android phones are vulnerable due to outdated versions no longer receiving security updates.
+        Google has confirmed that more than <strong>40% of Android phones worldwide</strong> are now vulnerable to new malware and spyware attacks due to outdated software versions no longer receiving security updates.
       </p>
-      <a class="btn" href="android-security.html">Read More</a>
+      <a class="btn" onclick="document.getElementById('android-article').style.display='block'; this.style.display='none';">Read Full Article</a>
     </div>
 
-    <!-- GALAXY S26 -->
-    <div class="article-preview">
-      <h2>Galaxy S26 Pricing Leaks: France Faces Steep Samsung Tax</h2>
-      <img src="chrome_UIuY2w4t6p.png" alt="Galaxy S26 leak">
-      <p>
-        New leaks suggest Samsung may increase Galaxy S26 prices by up to €180 in France and other European markets.
-      </p>
-      <a class="btn" href="galaxy-s26.html">Read More</a>
-    </div>
+    <div id="android-article" style="display:none; margin-top:40px;">
+      <h2>Google Warns: Old Android Phones Are No Longer Safe</h2>
 
-    <!-- NETWORKING RESEARCH -->
-    <div class="article-preview">
-      <h2>When Automation Breaks: Modern Networking Research</h2>
-      <img src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2" alt="Networking research">
-      <p>
-        Why fragile automation is hurting reproducibility in modern networking and AI-driven research workflows.
-      </p>
-      <a class="btn" href="networking-research.html">Read More</a>
-    </div>
+      <img src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd" alt="Google Android security warning" style="width:100%; border-radius:12px; margin:25px 0;">
 
-  </div>
+      <p>
+        Google has officially warned that over 40% of all Android phones are at risk from new malware and spyware attacks. This confirmation came after Forbes reported Google’s concerns shared on X, highlighting a massive global security issue affecting Android users.
+        <br><br>
+        According to Google’s latest Android distribution data, Android 16 is installed on only 7.5% of devices. Android 15 runs on 19.3%, Android 14 on 17.9%, and Android 13 on 13.9% of phones—the minimum version still receiving full security updates.
+        <br><br>
+        Versions Android 12 and older are no longer supported by Google. As a result, only about 58% of Android phones remain protected, leaving over a billion devices exposed to cyber threats. These phones cannot receive critical security patches, even when new malware or spyware is discovered.
+        <br><br>
+        Google has confirmed that active spyware attacks are already occurring and warned that outdated devices are completely unprotected. Although the data was collected in December, Google released it recently, making the warning urgent.
+      </p>
+
+      <a class="btn" onclick="this.style.display='none';">Read More</a>
+
+      <h3>What Users Must Do Now</h3>
+      <p>
+        Google strongly advises users whose phones cannot update to Android 13 or newer to replace their devices. The company recommends purchasing a mid-range phone that receives regular updates rather than continuing to use an unsupported flagship device.
+        <br><br>
+        Unlike Apple, where most iPhones eventually receive new iOS updates, many Android phones will never be updated again. Google emphasized that this is not a future risk—over a billion users are exposed right now.
+      </p>
+
+      <h3>FAQs</h3>
+      <p><strong>Q1. Why are 40% of Android phones at risk?</strong><br>
+      Because many phones run outdated Android versions that no longer receive security updates.</p>
+
+      <p><strong>Q2. What should Android users do now?</strong><br>
+      Users should update to Android 13 or newer, or purchase a new phone if updates are unavailable.</p>
+
+      <p><em>For more technology news and security updates, stay connected with TechPulse News.</em></p>
+    </div>
+  </section>
+
 </section>
 
 <footer>
