@@ -1,164 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>TechPulse News – Latest Technology & Mobile News</title>
 
-<title>TechPulse News – Technology, Mobile & Security Updates</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TechPulse News delivers the latest technology news, Android updates, Samsung leaks, cybersecurity alerts, and networking research articles.">
 
-<meta name="description" content="Latest technology news covering Samsung Galaxy leaks, Android security alerts, AI, and smartphone innovations.">
-<meta name="keywords" content="tech news, Samsung Galaxy, Android, mobile security, smartphone leaks">
-<meta name="author" content="TechPulse News">
+  <!-- Open Graph -->
+  <meta property="og:title" content="TechPulse News – Technology Updates">
+  <meta property="og:description" content="Latest tech news, Android security alerts, Samsung leaks, and in-depth research articles.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://s60930693-debug.github.io/TechNews/">
 
-<style>
-/* SAME DESIGN – NOT CHANGED */
-* { margin:0; padding:0; box-sizing:border-box; font-family:Arial, Helvetica, sans-serif; }
+  <!-- SEO -->
+  <link rel="canonical" href="https://s60930693-debug.github.io/TechNews/">
 
-body { background:#0b0f19; color:#fff; line-height:1.7; }
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(0,0,0,0.75);
-  backdrop-filter: blur(8px);
-}
+    body { background:#0b0f19; color:#fff; line-height:1.7; }
 
-.nav {
-  max-width: 1200px;
-  margin: auto;
-  padding: 16px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
 
-.logo { font-size:24px; font-weight:bold; }
+    .nav {
+      max-width: 1200px;
+      margin:auto;
+      padding:16px 25px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
 
-nav a {
-  color:#fff;
-  margin-left:22px;
-  text-decoration:none;
-  font-size:15px;
-}
+    nav a {
+      color:#fff;
+      margin-left:20px;
+      text-decoration:none;
+    }
 
-.hero {
-  min-height:90vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-    url('https://images.unsplash.com/photo-1518770660439-4636190af475')
-    center/cover no-repeat;
-  display:flex;
-  align-items:center;
-}
+    .hero {
+      min-height: 85vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1518770660439-4636190af475')
+      center/cover no-repeat;
+      display:flex;
+      align-items:center;
+    }
 
-.hero-content {
-  max-width:900px;
-  margin:auto;
-  padding:60px 25px;
-}
+    .hero-content {
+      max-width: 900px;
+      margin:auto;
+      padding:60px 25px;
+    }
 
-.hero h1 { font-size:44px; margin-bottom:18px; }
-.hero p { font-size:18px; color:#e5e7eb; }
+    .hero h1 { font-size:42px; }
 
-.btn {
-  display:inline-block;
-  margin-top:22px;
-  padding:14px 28px;
-  background:#2563eb;
-  color:#fff;
-  text-decoration:none;
-  border-radius:6px;
-  font-weight:bold;
-}
+    .container {
+      max-width:1100px;
+      margin:auto;
+      padding:70px 25px;
+    }
 
-.container {
-  max-width:1150px;
-  margin:auto;
-  padding:70px 25px;
-}
+    .articles-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap:40px;
+    }
 
-.articles-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
-  gap:35px;
-}
+    .article-preview img {
+      width:100%;
+      border-radius:12px;
+      margin:15px 0;
+    }
 
-.article-preview {
-  background:#020617;
-  padding:22px;
-  border-radius:14px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.35);
-}
+    .btn {
+      display:inline-block;
+      padding:12px 26px;
+      background:#2563eb;
+      color:#fff;
+      text-decoration:none;
+      border-radius:6px;
+      margin-top:10px;
+    }
 
-.article-preview img {
-  width:100%;
-  border-radius:12px;
-  margin-bottom:18px;
-}
-
-.article-preview h2 { font-size:22px; margin-bottom:12px; }
-.article-preview p { color:#d1d5db; font-size:15px; }
-
-footer {
-  background:#020617;
-  text-align:center;
-  padding:28px;
-  color:#9ca3af;
-}
-</style>
+    footer {
+      background:#020617;
+      text-align:center;
+      padding:30px;
+      color:#9ca3af;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
   <div class="nav">
-    <div class="logo">TechPulse News</div>
+    <div><strong>TechPulse News</strong></div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Latest Technology, Mobile & Security News</h1>
-    <p>Samsung Galaxy leaks, Android security alerts, AI innovation and smartphone trends.</p>
+    <h1>Latest Technology News & Research</h1>
+    <p>Trusted updates on Android security, Samsung leaks, and modern networking research.</p>
   </div>
 </section>
 
-<main class="container">
-  <section class="articles-grid">
+<section class="container">
 
-    <!-- ARTICLE 1 -->
-    <article class="article-preview">
-      <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf" alt="Samsung Galaxy smartphone">
-      <h2>Galaxy S26 Pricing Leaks: Europe Faces Major Price Hike</h2>
-      <p>Leaks suggest Samsung may raise Galaxy S26 prices in Europe, with some models increasing by €180.</p>
-      <a class="btn" href="galaxy-s26.html">Read More</a>
-    </article>
+  <!-- AdSense Placeholder -->
+  <div style="margin:30px 0; background:#111; padding:20px; text-align:center;">
+    Google AdSense Ad Placement
+  </div>
 
-    <!-- ARTICLE 2 -->
-    <article class="article-preview">
-      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Android phone security alert">
-      <h2>Android Security Alert: Over 40% Phones at Risk</h2>
-      <p>Google warns that billions of Android phones no longer receive security updates and remain exposed.</p>
-      <a class="btn" href="android-security.html">Read More</a>
-    </article>
+  <div class="articles-grid">
 
-    <!-- ARTICLE 3 (RESTORED) -->
-    <article class="article-preview">
-      <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" alt="Artificial intelligence technology">
-      <h2>How Artificial Intelligence Is Reshaping Modern Technology</h2>
-      <p>AI is transforming smartphones, cybersecurity, cloud computing, and how users interact with technology.</p>
-      <a class="btn" href="ai-technology.html">Read More</a>
-    </article>
+    <!-- Article 1 -->
+    <div class="article-preview">
+      <h2>Galaxy S26 Pricing Leak: Europe Faces a Samsung Tax</h2>
+      <img src="assets/images/galaxy-s26.jpg" alt="Samsung Galaxy S26" loading="lazy">
+      <p>Leaks suggest Samsung may increase Galaxy S26 prices by up to €180 in Europe.</p>
+      <a class="btn" href="article-galaxy-s26.html">Read More</a>
+    </div>
 
-  </section>
-</main>
+    <!-- Article 2 -->
+    <div class="article-preview">
+      <h2>Android Security Alert: 40% of Phones at Risk</h2>
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Android security warning" loading="lazy">
+      <p>Google confirms billions of Android phones are exposed due to missing updates.</p>
+      <a class="btn" href="article-android-security.html">Read More</a>
+    </div>
+
+    <!-- Article 3 -->
+    <div class="article-preview">
+      <h2>When Automation Breaks: Modern Networking Research</h2>
+      <img src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2" alt="Networking research" loading="lazy">
+      <p>Why fragile automation is breaking reproducible networking experiments.</p>
+      <a class="btn" href="article-automation-research.html">Read More</a>
+    </div>
+
+  </div>
+</section>
 
 <footer>
   © 2026 TechPulse News · All Rights Reserved
