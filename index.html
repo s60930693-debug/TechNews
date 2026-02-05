@@ -1,196 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TechPulse News | Computer Technology & Networking Research</title>
-  <meta name="description" content="In-depth computer technology news, networking research, automation systems, and AI-driven workflows explained with clarity.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechPulse News – Computer Technology Research</title>
 
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+
     body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #f4f6f8;
-      color: #111;
-      line-height: 1.8;
+      background: #0b0f19;
+      color: #ffffff;
+      line-height: 1.7;
     }
 
-    /* HERO SECTION */
-    .hero {
-      background-image: linear-gradient(
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.55)
-      ),
-      url("https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg");
-      background-size: cover;
-      background-position: center;
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
       color: #fff;
-      padding: 120px 20px;
+      margin-left: 22px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
+      url('https://images.unsplash.com/photo-1518770660439-4636190af475') center/cover no-repeat;
+      display: flex;
+      align-items: center;
     }
 
     .hero-content {
       max-width: 900px;
       margin: auto;
+      padding: 60px 25px;
     }
 
     .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
+      font-size: 44px;
+      margin-bottom: 20px;
     }
 
     .hero p {
       font-size: 18px;
-      max-width: 700px;
+      color: #d1d5db;
     }
 
-    /* MAIN CONTAINER */
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
-      padding: 40px 25px;
-    }
-
-    h2 {
-      font-size: 30px;
-      margin-top: 0;
-    }
-
-    h3 {
-      margin-top: 35px;
-      font-size: 22px;
-    }
-
-    .article-image {
-      width: 100%;
-      border-radius: 8px;
-      margin: 25px 0;
-    }
-
-    .read-more {
+    .btn {
       display: inline-block;
       margin-top: 25px;
-      padding: 12px 22px;
-      background-color: #0057b8;
+      padding: 14px 28px;
+      background: #2563eb;
       color: #fff;
       text-decoration: none;
-      font-weight: 600;
-      border-radius: 4px;
+      border-radius: 6px;
+      font-weight: bold;
     }
 
-    .read-more:hover {
-      background-color: #003f87;
+    .btn:hover { background: #1d4ed8; }
+
+    /* ARTICLE */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 25px;
+    }
+
+    .article-preview h2 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .article-preview img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 30px 0;
+    }
+
+    .article-preview p {
+      color: #d1d5db;
+      font-size: 17px;
+    }
+
+    /* FULL ARTICLE */
+    #full-article {
+      display: none;
+      margin-top: 50px;
     }
 
     footer {
-      background: #0b1c2d;
-      color: #ccc;
-      padding: 30px 20px;
+      background: #020617;
       text-align: center;
-      margin-top: 60px;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: #8ab4f8;
-      text-decoration: none;
-      margin: 0 10px;
+      padding: 30px;
+      color: #9ca3af;
     }
   </style>
+
+  <script>
+    function toggleArticle() {
+      const article = document.getElementById('full-article');
+      article.style.display = 'block';
+      article.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </head>
 
 <body>
 
-<!-- HERO -->
+<header>
+  <div class="nav">
+    <div class="logo">TechPulse News</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </div>
+</header>
+
 <section class="hero">
   <div class="hero-content">
-    <h1>Powering Insight in Computer Technology</h1>
+    <h1>When Automation Breaks: Why Modern Networking Research Needs a New Workflow Paradigm</h1>
+    <p>Deep research into fragile automation, reproducible data generation, and the future of application-aware networking experiments.</p>
+    <a class="btn" onclick="toggleArticle()">Read Full Research</a>
+  </div>
+</section>
+
+<section class="container">
+  <div class="article-preview">
+    <h2>Research Overview</h2>
+    <img src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2" alt="Man using computer">
     <p>
-      Deep analysis of networking research, automation systems, and evolving
-      application workflows — built for reproducibility and scale.
+      Modern networking research increasingly depends on automation for data generation, experimentation, and supervised learning. However, as applications evolve rapidly, traditional automation approaches fail to keep pace.
+    </p>
+  </div>
+
+  <div id="full-article">
+    <h2>The Full Research Article</h2>
+    <p>
+      Imagine running a careful measurement study to understand how an application behaves under different network conditions... 
+      <br><br>
+      This article explores the hidden cost of brittle automation, the challenges of reproducibility, and introduces NetGent — a deterministic, scalable workflow synthesis system designed for modern networking research.
+      <br><br>
+      NetGent decouples workflow intent from execution, enabling researchers to regenerate workflows as applications evolve without sacrificing consistency or scale. By synthesizing executable state machines from natural-language workflow definitions, NetGent offers a new paradigm for realistic, repeatable application traffic generation.
+      <br><br>
+      This research highlights why automation tooling must evolve alongside applications themselves — and why treating data generation as a first-class system is essential for the future of networking research.
     </p>
   </div>
 </section>
 
-<!-- MAIN CONTENT -->
-<div class="container">
-
-  <article>
-    <h2>When Automation Breaks: Why Modern Networking Research Needs a New Workflow Paradigm</h2>
-
-    <img
-      src="https://images.pexels.com/photos/5475752/pexels-photo-5475752.jpeg"
-      alt="Man using computer for advanced technology research"
-      class="article-image"
-    >
-
-    <p>
-      Imagine running a careful measurement study to understand how an application
-      behaves under different network conditions. Or imagine generating labelled
-      datasets for a supervised learning model, where ground-truth must be collected
-      under tightly controlled environments. Everything is planned. Everything is
-      scripted. Everything works.
-    </p>
-
-    <p>
-      You log into Instagram. You scroll through several reels. You generate realistic
-      video traffic. You observe how performance shifts as latency increases or
-      bandwidth drops. The experiment runs smoothly. Results look promising.
-    </p>
-
-    <p>
-      Then you try again the next day. The login screen changes. A button moves.
-      A consent dialog appears asynchronously. The automation freezes or fails
-      entirely. The workflow collapses — not because the research question changed,
-      but because the application did.
-    </p>
-
-    <h3>The Hidden Cost of Fragile Automation</h3>
-
-    <p>
-      This experience is familiar to anyone who has attempted real-world automation
-      for networking research or data generation. Traditional browser automation
-      frameworks depend on brittle scripts tied directly to UI elements. Even minor
-      interface updates are enough to break them.
-    </p>
-
-    <p>
-      Agent-based approaches promise flexibility, but they introduce new challenges:
-      high runtime cost, latency from LLM inference, and nondeterminism that undermines
-      reproducibility across experimental runs.
-    </p>
-
-    <h3>Why Data Generation Needs a Rethink</h3>
-
-    <p>
-      High-quality data is foundational for congestion control evaluation, Quality of
-      Experience inference, anomaly detection, and traffic classification. Fragile
-      scripts and manually curated traces limit scalability and comparability across
-      research environments.
-    </p>
-
-    <h3>A New Direction for Workflow Design</h3>
-
-    <p>
-      A sustainable solution requires separating workflow intent from execution,
-      decoupling logic from UI specifics, and enabling deterministic execution even as
-      applications evolve.
-    </p>
-
-    <a href="article.html" class="read-more">Read Full Research Article</a>
-
-  </article>
-
-</div>
-
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 TechPulse News</p>
-  <p>
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="privacy.html">Privacy Policy</a>
-  </p>
+  © 2026 TechPulse News · All Rights Reserved
 </footer>
 
 </body>
