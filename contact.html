@@ -1,55 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Thank You | TechPulse News</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Contact Us | TechPulse News</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #F4F6F8;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-    }
-    .box {
-      background: #fff;
-      padding: 50px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    h1 {
-      color: #1E1E2F;
-    }
-    p {
-      color: #555;
-      margin: 20px 0;
-    }
-    a {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #1E90FF;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    a:hover {
-      background: #0066cc;
-    }
-  </style>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #F4F6F8;
+  margin: 0;
+}
+header {
+  background: #1E1E2F;
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+  border-bottom: 5px solid #1E90FF;
+}
+nav {
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #1E1E2F;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #1E90FF;
+}
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 15px;
+}
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+button {
+  margin-top: 20px;
+  background: #1E90FF;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:hover {
+  background: #0066cc;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f1f1f1;
+  margin-top: 50px;
+}
+
+/* THANK YOU SECTION */
+#thankyou {
+  display: none;
+  text-align: center;
+}
+#thankyou a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #1E90FF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+#thankyou a:hover {
+  background: #0066cc;
+}
+</style>
 </head>
+
 <body>
 
+<header>
+  <h1>Contact TechPulse News</h1>
+  <p>We’d love to hear from you</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="privacy.html">Privacy</a>
+</nav>
+
+<main>
 <div class="box">
-  <h1>Thank You!</h1>
-  <p>Your message has been sent successfully.</p>
-  <a href="index.html">Go Back Home</a>
+
+<!-- CONTACT FORM -->
+<div id="formSection">
+<form id="contactForm">
+  <label>Your Name</label>
+  <input type="text" name="name" required>
+
+  <label>Email</label>
+  <input type="email" name="email" required>
+
+  <label>Subject</label>
+  <input type="text" name="subject" required>
+
+  <label>Message</label>
+  <textarea name="message" rows="6" required></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
 </div>
+
+<!-- THANK YOU MESSAGE -->
+<div id="thankyou">
+  <h2>Thank You!</h2>
+  <p>Your message has been sent successfully.</p>
+  <a href="index.html">Go to Home</a>
+</div>
+
+</div>
+</main>
+
+<footer>
+© 2026 TechPulse News
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://formsubmit.co/s60930693@gmail.com", {
+    method: "POST",
+    body: new FormData(this),
+    headers: { 'Accept': 'application/json' }
+  }).then(() => {
+    document.getElementById("formSection").style.display = "none";
+    document.getElementById("thankyou").style.display = "block";
+  }).catch(() => {
+    alert("Something went wrong. Please try again.");
+  });
+});
+</script>
 
 </body>
 </html>
