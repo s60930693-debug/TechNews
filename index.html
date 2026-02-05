@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TechPulse News – Computer Technology Research</title>
+  <title>TechPulse News – Latest Technology & Research</title>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
     body {
       background: #0b0f19;
@@ -19,7 +24,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(10px);
     }
 
@@ -44,12 +49,14 @@
       font-size: 15px;
     }
 
-    nav a:hover { text-decoration: underline; }
+    nav a:hover {
+      text-decoration: underline;
+    }
 
     /* HERO */
     .hero {
-      min-height: 90vh;
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
+      min-height: 85vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
       url('https://images.unsplash.com/photo-1518770660439-4636190af475') center/cover no-repeat;
       display: flex;
       align-items: center;
@@ -71,25 +78,27 @@
       color: #d1d5db;
     }
 
+    /* BUTTON */
     .btn {
       display: inline-block;
-      margin-top: 25px;
+      margin-top: 20px;
       padding: 14px 28px;
       background: #2563eb;
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
-      cursor: pointer;
     }
 
-    .btn:hover { background: #1d4ed8; }
+    .btn:hover {
+      background: #1d4ed8;
+    }
 
-    /* ARTICLE GRID */
+    /* ARTICLES GRID */
     .container {
       max-width: 1200px;
       margin: auto;
-      padding: 50px 25px;
+      padding: 60px 25px;
     }
 
     .articles-grid {
@@ -100,12 +109,14 @@
 
     .article-preview {
       background: #1b1f33;
-      border-radius: 12px;
-      padding: 20px;
-      transition: transform 0.2s;
+      padding: 22px;
+      border-radius: 14px;
+      transition: transform 0.3s;
     }
 
-    .article-preview:hover { transform: translateY(-5px); }
+    .article-preview:hover {
+      transform: translateY(-6px);
+    }
 
     .article-preview img {
       width: 100%;
@@ -121,16 +132,6 @@
     .article-preview p {
       color: #d1d5db;
       font-size: 15px;
-      height: 80px;
-      overflow: hidden;
-    }
-
-    .full-article {
-      display: none;
-      margin-top: 30px;
-      background: #1b1f33;
-      padding: 25px;
-      border-radius: 12px;
     }
 
     footer {
@@ -138,23 +139,9 @@
       text-align: center;
       padding: 30px;
       color: #9ca3af;
-      margin-top: 50px;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 32px; }
-      .hero p { font-size: 16px; }
+      margin-top: 60px;
     }
   </style>
-
-  <script>
-    function toggleArticle(id, btn) {
-      const article = document.getElementById(id);
-      article.style.display = article.style.display === 'block' ? 'none' : 'block';
-      if(btn) btn.style.display = 'none';
-      article.scrollIntoView({ behavior: 'smooth' });
-    }
-  </script>
 </head>
 
 <body>
@@ -173,70 +160,46 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h1>When Automation Breaks: Why Modern Networking Research Needs a New Workflow Paradigm</h1>
-    <p>Deep research into fragile automation, reproducible data generation, and the future of application-aware networking experiments.</p>
-    <a class="btn" onclick="toggleArticle('networking-article')">Read Full Research</a>
+    <h1>Latest Technology News, Research & Insights</h1>
+    <p>
+      Stay updated with smartphone leaks, cybersecurity alerts, AI research, and the future of modern technology.
+    </p>
   </div>
 </section>
 
 <section class="container">
   <div class="articles-grid">
-    <!-- Networking Article -->
+
+    <!-- ANDROID SECURITY -->
     <div class="article-preview">
-      <h2>Networking Research Automation Challenges</h2>
-      <img src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2" alt="Man using computer">
-      <p>Modern networking research depends on automation for data generation and experimentation, but evolving applications can break traditional workflows.</p>
-      <a class="btn" onclick="toggleArticle('networking-article', this)">Read More</a>
-      <div id="networking-article" class="full-article">
-        <h3>The Full Research Article</h3>
-        <p>
-          Imagine running a careful measurement study to understand how an application behaves under different network conditions... 
-          <br><br>
-          This article explores the hidden cost of brittle automation, the challenges of reproducibility, and introduces NetGent — a deterministic, scalable workflow synthesis system designed for modern networking research.
-          <br><br>
-          NetGent decouples workflow intent from execution, enabling researchers to regenerate workflows as applications evolve without sacrificing consistency or scale. By synthesizing executable state machines from natural-language workflow definitions, NetGent offers a new paradigm for realistic, repeatable application traffic generation.
-          <br><br>
-          This research highlights why automation tooling must evolve alongside applications themselves — and why treating data generation as a first-class system is essential for the future of networking research.
-        </p>
-      </div>
+      <h2>Android Security Alert: Over 40% of Phones at Risk</h2>
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Android security">
+      <p>
+        Google confirms millions of Android phones are vulnerable due to outdated versions no longer receiving security updates.
+      </p>
+      <a class="btn" href="android-security.html">Read More</a>
     </div>
 
-    <!-- Android Security Article -->
+    <!-- GALAXY S26 -->
     <div class="article-preview">
-      <h2>Android Security Alert: Over 40% Phones at Risk</h2>
-      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Android phone security risk">
-      <p>Google confirms over <strong>40% of Android phones</strong> are vulnerable to malware and spyware due to outdated software.</p>
-      <a class="btn" onclick="toggleArticle('android-article', this)">Read More</a>
-      <div id="android-article" class="full-article">
-        <h3>Google Warns: Old Android Phones Are No Longer Safe</h3>
-        <img src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd" alt="Google Android security warning" style="width:100%; border-radius:12px; margin:15px 0;">
-        <p>
-          Google warns over 40% of Android phones worldwide are at risk from malware attacks. Phones running Android 12 or older no longer receive security updates, leaving over a billion devices exposed. Users are advised to update to Android 13 or purchase new devices.
-        </p>
-      </div>
+      <h2>Galaxy S26 Pricing Leaks: France Faces Steep Samsung Tax</h2>
+      <img src="chrome_UIuY2w4t6p.png" alt="Galaxy S26 leak">
+      <p>
+        New leaks suggest Samsung may increase Galaxy S26 prices by up to €180 in France and other European markets.
+      </p>
+      <a class="btn" href="galaxy-s26.html">Read More</a>
     </div>
 
-    <!-- Galaxy S26 Article -->
+    <!-- NETWORKING RESEARCH -->
     <div class="article-preview">
-      <h2>Galaxy S26 Pricing Leak: France Faces Steep Samsung Tax</h2>
-      <img src="/mnt/data/chrome_UIuY2w4t6p.png" alt="Galaxy S26 Leaks">
-      <p>Leaks reveal the Galaxy S26 may see a €100–€180 price increase in France, raising concerns among European Samsung fans.</p>
-      <a class="btn" onclick="toggleArticle('galaxy-article', this)">Read More</a>
-      <div id="galaxy-article" class="full-article">
-        <h3>Galaxy S26 Pricing Leak Details</h3>
-        <p>
-          The official unveiling of the Samsung Galaxy S26 lineup is expected on <strong>February 25, 2026</strong>. French pricing leaks indicate:
-          <ul>
-            <li>256 GB model: +€100</li>
-            <li>512 GB model: +€180</li>
-          </ul>
-          Samsung’s “premium pricing” strategy continues across Europe. The lineup promises upgrades in cameras, AI features, processor speed, and battery life.
-        </p>
-        <p>
-          Buyers are advised to compare prices, wait for promotions, or explore trade-ins. The Galaxy S26 may justify the price hike with advanced features, but the “Samsung tax” is real.
-        </p>
-      </div>
+      <h2>When Automation Breaks: Modern Networking Research</h2>
+      <img src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2" alt="Networking research">
+      <p>
+        Why fragile automation is hurting reproducibility in modern networking and AI-driven research workflows.
+      </p>
+      <a class="btn" href="networking-research.html">Read More</a>
     </div>
+
   </div>
 </section>
 
