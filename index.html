@@ -2,154 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TechPulse News – Latest Technology & AI Updates</title>
-  <meta name="description" content="TechPulse News provides the latest technology news, AI updates, hardware reviews, and insights for tech enthusiasts.">
-  <meta name="keywords" content="TechPulse News, technology news, AI updates, computer tech, latest tech, hardware, software">
+  <title>TechPulse News | Computer Technology Research & News</title>
+  <meta name="description" content="Latest computer technology news, networking research insights, automation workflows, and AI-driven systems explained clearly.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Roboto', sans-serif; margin:0; background:#f4f4f4; color:#333; }
-
-    /* HEADER */
-    header { background:#1E1E2F; color:#fff; padding:20px 0; text-align:center; }
-    nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; }
-    nav a:hover { color:#1E90FF; }
-
-    /* HERO SECTION */
-    .hero {
-      height: 400px;
-      background-image: url('images/hero-bg.jpg'); /* YOUR uploaded image */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
     }
-    .hero::before {
-      content:"";
-      position:absolute;
-      top:0; left:0; right:0; bottom:0;
-      background-color: rgba(0,0,0,0.5); /* dark overlay for readability */
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      padding: 25px;
     }
-    .hero h1 {
-      position: relative;
-      color: white;
-      font-size: 3rem;
+    header h1 {
+      margin-bottom: 5px;
+    }
+    header p {
+      color: #555;
+    }
+    img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+    article h2 {
+      margin-top: 10px;
+    }
+    .read-more-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 16px;
+      background: #0066cc;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .read-more-btn:hover {
+      background: #004d99;
+    }
+    .hidden-content {
+      display: none;
+      margin-top: 15px;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
       text-align: center;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-      z-index: 1;
+      font-size: 14px;
     }
-
-    /* ARTICLES SECTION */
-    .articles { 
-      display:grid; 
-      grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); 
-      gap:20px; 
-      max-width:1200px; 
-      margin:40px auto; 
-      padding:0 20px; 
-    }
-    .card {
-      background:#333; /* fallback color */
-      border-radius:10px;
-      min-height:250px;
-      color:white;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      padding:15px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.3);
-      position: relative;
-    }
-    .card::before {
-      content:"";
-      position:absolute;
-      top:0; left:0; right:0; bottom:0;
-      background-color: rgba(0,0,0,0.4); /* overlay for text readability */
-      border-radius:10px;
-      z-index:0;
-    }
-    .card-content { position:relative; z-index:1; }
-    .card-content h3 { margin:0 0 10px 0; font-size:1.2rem; }
-    .card-content p { font-size:0.95rem; }
-    .card-content a { display:inline-block; margin-top:10px; color:#1E90FF; text-decoration:none; font-weight:bold; }
-    .card-content a:hover { color:#00aaff; }
-
-    /* CONTACT SECTION */
-    .contact-info { text-align:center; margin:40px 0; }
-    .contact-info p { margin:5px 0; font-weight:bold; }
-
-    /* FOOTER */
-    footer { background:#f1f1f1; text-align:center; padding:20px; margin-top:40px; }
-    footer a { margin:0 10px; color:#1E90FF; text-decoration:none; }
-    footer a:hover { color:#0066cc; }
-
-    /* RESPONSIVE */
-    @media screen and (max-width: 600px) {
-      nav a { display:block; margin:10px 0; }
-      .hero h1 { font-size:2rem; }
+    footer a {
+      color: #0066cc;
+      text-decoration: none;
+      margin: 0 8px;
     }
   </style>
 </head>
+
 <body>
+
+<div class="container">
 
 <header>
   <h1>TechPulse News</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy</a>
-  </nav>
+  <p>Computer Technology • Networking Research • Automation • AI Systems</p>
 </header>
 
-<section class="hero">
-  <h1>Latest Technology & AI News</h1>
-</section>
+<article>
+  <h2>When Automation Breaks: Why Modern Networking Research Needs a New Workflow Paradigm</h2>
 
-<section class="articles">
-  <div class="card" style="background-image:url('images/ai-bg.jpg');">
-    <div class="card-content">
-      <h3>Top AI Tools in 2026</h3>
-      <p>Discover the AI tools transforming development and tech workflows.</p>
-      <a href="#">Read more</a>
-    </div>
+  <img src="https://images.pexels.com/photos/5475752/pexels-photo-5475752.jpeg"
+       alt="Man using computer for networking and technology research">
+
+  <p>
+    Imagine running a careful measurement study to understand how an application behaves under
+    different network conditions. Or imagine generating labelled datasets for a supervised
+    learning model, where ground-truth must be collected under tightly controlled environments.
+    Everything is planned. Everything is scripted. Everything works.
+  </p>
+
+  <p>
+    Then you try again the next day — and the workflow collapses. A button moves. A new cookie
+    banner appears. A consent dialog loads asynchronously. Automation freezes or fails entirely.
+  </p>
+
+  <a class="read-more-btn" onclick="toggleReadMore()">Read More</a>
+
+  <div class="hidden-content" id="fullArticle">
+
+    <h3>The Hidden Cost of Fragile Automation</h3>
+    <p>
+      Traditional browser automation depends on brittle scripts tied to UI elements. Even minor
+      UI updates break them. Agent-based approaches improve flexibility but introduce latency,
+      cost, and nondeterminism, undermining reproducibility.
+    </p>
+
+    <h3>Why Data Generation Needs a Rethink</h3>
+    <p>
+      High-quality datasets underpin congestion control evaluation, QoE inference, anomaly
+      detection, and traffic classification. Fragile scripts and manual traces make experiments
+      difficult to reproduce and scale.
+    </p>
+
+    <h3>Why Application Workflows Are So Hard</h3>
+    <p>
+      Modern workflows involve conditional logic, asynchronous events, pop-ups, and frequently
+      changing interfaces. Automation must adapt without becoming nondeterministic.
+    </p>
+
+    <h3>How NetGent Works</h3>
+    <p>
+      NetGent separates workflow intent from execution. Researchers define workflows in natural
+      language, which are compiled into abstract NFAs and executed deterministically without
+      runtime AI inference.
+    </p>
+
+    <h3>Why NetGent Matters</h3>
+    <p>
+      NetGent enables scalable, realistic, and reproducible application traffic generation for
+      networking research, ML training, and system evaluation.
+    </p>
+
+    <h3>Looking Ahead</h3>
+    <p>
+      NetGent addresses application behavior. Future systems like NetReplica will complement it
+      by modeling diverse network conditions for fully reproducible experimentation.
+    </p>
+
   </div>
-
-  <div class="card" style="background-image:url('images/hardware-bg.jpg');">
-    <div class="card-content">
-      <h3>Next-Gen Hardware Updates</h3>
-      <p>Explore the latest CPUs, GPUs, and tech hardware innovations.</p>
-      <a href="#">Read more</a>
-    </div>
-  </div>
-
-  <div class="card" style="background-image:url('images/cybersecurity-bg.jpg');">
-    <div class="card-content">
-      <h3>Cybersecurity Trends in 2026</h3>
-      <p>Learn about emerging threats and best practices in cybersecurity.</p>
-      <a href="#">Read more</a>
-    </div>
-  </div>
-</section>
-
-<section class="contact-info">
-  <h2>Contact Us</h2>
-  <p>Email: <a href="mailto:s60930694@gmail.com">s60930694@gmail.com</a></p>
-  <p>Phone: <a href="tel:+923054538756">+92 305 4538756</a></p>
-</section>
+</article>
 
 <footer>
   <p>© 2026 TechPulse News</p>
   <p>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About Us</a> |
+    <a href="about.html">About</a> |
     <a href="contact.html">Contact</a> |
     <a href="privacy.html">Privacy Policy</a>
   </p>
 </footer>
+
+</div>
+
+<script>
+  function toggleReadMore() {
+    const content = document.getElementById("fullArticle");
+    const btn = document.querySelector(".read-more-btn");
+
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.textContent = "Read More";
+    } else {
+      content.style.display = "block";
+      btn.textContent = "Read Less";
+    }
+  }
+</script>
 
 </body>
 </html>
