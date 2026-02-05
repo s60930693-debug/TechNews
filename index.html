@@ -2,145 +2,188 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TechPulse News | Computer Technology Research & News</title>
-  <meta name="description" content="Latest computer technology news, networking research insights, automation workflows, and AI-driven systems explained clearly.">
+  <title>TechPulse News | Computer Technology & Networking Research</title>
+  <meta name="description" content="In-depth computer technology news, networking research, automation systems, and AI-driven workflows explained with clarity.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
       margin: 0;
-      padding: 0;
-      line-height: 1.7;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f4f6f8;
+      color: #111;
+      line-height: 1.8;
     }
+
+    /* HERO SECTION */
+    .hero {
+      background-image: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)
+      ),
+      url("https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 120px 20px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+    }
+
+    /* MAIN CONTAINER */
     .container {
       max-width: 900px;
       margin: auto;
-      background: #ffffff;
-      padding: 25px;
+      background: #fff;
+      padding: 40px 25px;
     }
-    header h1 {
-      margin-bottom: 5px;
+
+    h2 {
+      font-size: 30px;
+      margin-top: 0;
     }
-    header p {
-      color: #555;
+
+    h3 {
+      margin-top: 35px;
+      font-size: 22px;
     }
-    img {
+
+    .article-image {
       width: 100%;
-      max-height: 420px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin: 20px 0;
+      border-radius: 8px;
+      margin: 25px 0;
     }
-    article h2 {
-      margin-top: 10px;
-    }
-    .read-more-btn {
+
+    .read-more {
       display: inline-block;
-      margin-top: 15px;
-      padding: 10px 16px;
-      background: #0066cc;
+      margin-top: 25px;
+      padding: 12px 22px;
+      background-color: #0057b8;
       color: #fff;
       text-decoration: none;
+      font-weight: 600;
       border-radius: 4px;
-      cursor: pointer;
     }
-    .read-more-btn:hover {
-      background: #004d99;
+
+    .read-more:hover {
+      background-color: #003f87;
     }
-    .hidden-content {
-      display: none;
-      margin-top: 15px;
-    }
+
     footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
+      background: #0b1c2d;
+      color: #ccc;
+      padding: 30px 20px;
       text-align: center;
+      margin-top: 60px;
       font-size: 14px;
     }
+
     footer a {
-      color: #0066cc;
+      color: #8ab4f8;
       text-decoration: none;
-      margin: 0 8px;
+      margin: 0 10px;
     }
   </style>
 </head>
 
 <body>
 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Powering Insight in Computer Technology</h1>
+    <p>
+      Deep analysis of networking research, automation systems, and evolving
+      application workflows — built for reproducibility and scale.
+    </p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
 <div class="container">
 
-<header>
-  <h1>TechPulse News</h1>
-  <p>Computer Technology • Networking Research • Automation • AI Systems</p>
-</header>
+  <article>
+    <h2>When Automation Breaks: Why Modern Networking Research Needs a New Workflow Paradigm</h2>
 
-<article>
-  <h2>When Automation Breaks: Why Modern Networking Research Needs a New Workflow Paradigm</h2>
+    <img
+      src="https://images.pexels.com/photos/5475752/pexels-photo-5475752.jpeg"
+      alt="Man using computer for advanced technology research"
+      class="article-image"
+    >
 
-  <img src="https://images.pexels.com/photos/5475752/pexels-photo-5475752.jpeg"
-       alt="Man using computer for networking and technology research">
+    <p>
+      Imagine running a careful measurement study to understand how an application
+      behaves under different network conditions. Or imagine generating labelled
+      datasets for a supervised learning model, where ground-truth must be collected
+      under tightly controlled environments. Everything is planned. Everything is
+      scripted. Everything works.
+    </p>
 
-  <p>
-    Imagine running a careful measurement study to understand how an application behaves under
-    different network conditions. Or imagine generating labelled datasets for a supervised
-    learning model, where ground-truth must be collected under tightly controlled environments.
-    Everything is planned. Everything is scripted. Everything works.
-  </p>
+    <p>
+      You log into Instagram. You scroll through several reels. You generate realistic
+      video traffic. You observe how performance shifts as latency increases or
+      bandwidth drops. The experiment runs smoothly. Results look promising.
+    </p>
 
-  <p>
-    Then you try again the next day — and the workflow collapses. A button moves. A new cookie
-    banner appears. A consent dialog loads asynchronously. Automation freezes or fails entirely.
-  </p>
-
-  <a class="read-more-btn" onclick="toggleReadMore()">Read More</a>
-
-  <div class="hidden-content" id="fullArticle">
+    <p>
+      Then you try again the next day. The login screen changes. A button moves.
+      A consent dialog appears asynchronously. The automation freezes or fails
+      entirely. The workflow collapses — not because the research question changed,
+      but because the application did.
+    </p>
 
     <h3>The Hidden Cost of Fragile Automation</h3>
+
     <p>
-      Traditional browser automation depends on brittle scripts tied to UI elements. Even minor
-      UI updates break them. Agent-based approaches improve flexibility but introduce latency,
-      cost, and nondeterminism, undermining reproducibility.
+      This experience is familiar to anyone who has attempted real-world automation
+      for networking research or data generation. Traditional browser automation
+      frameworks depend on brittle scripts tied directly to UI elements. Even minor
+      interface updates are enough to break them.
+    </p>
+
+    <p>
+      Agent-based approaches promise flexibility, but they introduce new challenges:
+      high runtime cost, latency from LLM inference, and nondeterminism that undermines
+      reproducibility across experimental runs.
     </p>
 
     <h3>Why Data Generation Needs a Rethink</h3>
+
     <p>
-      High-quality datasets underpin congestion control evaluation, QoE inference, anomaly
-      detection, and traffic classification. Fragile scripts and manual traces make experiments
-      difficult to reproduce and scale.
+      High-quality data is foundational for congestion control evaluation, Quality of
+      Experience inference, anomaly detection, and traffic classification. Fragile
+      scripts and manually curated traces limit scalability and comparability across
+      research environments.
     </p>
 
-    <h3>Why Application Workflows Are So Hard</h3>
+    <h3>A New Direction for Workflow Design</h3>
+
     <p>
-      Modern workflows involve conditional logic, asynchronous events, pop-ups, and frequently
-      changing interfaces. Automation must adapt without becoming nondeterministic.
+      A sustainable solution requires separating workflow intent from execution,
+      decoupling logic from UI specifics, and enabling deterministic execution even as
+      applications evolve.
     </p>
 
-    <h3>How NetGent Works</h3>
-    <p>
-      NetGent separates workflow intent from execution. Researchers define workflows in natural
-      language, which are compiled into abstract NFAs and executed deterministically without
-      runtime AI inference.
-    </p>
+    <a href="article.html" class="read-more">Read Full Research Article</a>
 
-    <h3>Why NetGent Matters</h3>
-    <p>
-      NetGent enables scalable, realistic, and reproducible application traffic generation for
-      networking research, ML training, and system evaluation.
-    </p>
+  </article>
 
-    <h3>Looking Ahead</h3>
-    <p>
-      NetGent addresses application behavior. Future systems like NetReplica will complement it
-      by modeling diverse network conditions for fully reproducible experimentation.
-    </p>
+</div>
 
-  </div>
-</article>
-
+<!-- FOOTER -->
 <footer>
   <p>© 2026 TechPulse News</p>
   <p>
@@ -149,23 +192,6 @@
     <a href="privacy.html">Privacy Policy</a>
   </p>
 </footer>
-
-</div>
-
-<script>
-  function toggleReadMore() {
-    const content = document.getElementById("fullArticle");
-    const btn = document.querySelector(".read-more-btn");
-
-    if (content.style.display === "block") {
-      content.style.display = "none";
-      btn.textContent = "Read More";
-    } else {
-      content.style.display = "block";
-      btn.textContent = "Read Less";
-    }
-  }
-</script>
 
 </body>
 </html>
