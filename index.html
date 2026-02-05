@@ -3,23 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechPulse News – Technology & Mobile Updates</title>
+
+<title>TechPulse News – Technology, Mobile & Security Updates</title>
+
+<meta name="description" content="Latest technology news covering Samsung Galaxy leaks, Android security alerts, AI, and smartphone innovations.">
+<meta name="keywords" content="tech news, Samsung Galaxy, Android, mobile security, smartphone leaks">
+<meta name="author" content="TechPulse News">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* SAME DESIGN – NOT CHANGED */
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial, Helvetica, sans-serif; }
 
-body {
-  background: #0b0f19;
-  color: #ffffff;
-  line-height: 1.7;
-}
+body { background:#0b0f19; color:#fff; line-height:1.7; }
 
-/* HEADER */
 header {
   position: sticky;
   top: 0;
@@ -37,99 +33,78 @@ header {
   align-items: center;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
+.logo { font-size:24px; font-weight:bold; }
 
 nav a {
-  color: #fff;
-  margin-left: 22px;
-  text-decoration: none;
-  font-size: 15px;
+  color:#fff;
+  margin-left:22px;
+  text-decoration:none;
+  font-size:15px;
 }
 
-/* HERO */
 .hero {
-  min-height: 90vh;
+  min-height:90vh;
   background:
     linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
     url('https://images.unsplash.com/photo-1518770660439-4636190af475')
-    center / cover no-repeat;
-  display: flex;
-  align-items: center;
+    center/cover no-repeat;
+  display:flex;
+  align-items:center;
 }
 
 .hero-content {
-  max-width: 900px;
-  margin: auto;
-  padding: 60px 25px;
+  max-width:900px;
+  margin:auto;
+  padding:60px 25px;
 }
 
-.hero h1 {
-  font-size: 44px;
-  margin-bottom: 18px;
-}
+.hero h1 { font-size:44px; margin-bottom:18px; }
+.hero p { font-size:18px; color:#e5e7eb; }
 
-.hero p {
-  font-size: 18px;
-  color: #e5e7eb;
-}
-
-/* BUTTON */
 .btn {
-  display: inline-block;
-  margin-top: 22px;
-  padding: 14px 28px;
-  background: #2563eb;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
+  display:inline-block;
+  margin-top:22px;
+  padding:14px 28px;
+  background:#2563eb;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:bold;
 }
 
-/* ARTICLES */
 .container {
-  max-width: 1150px;
-  margin: auto;
-  padding: 70px 25px;
+  max-width:1150px;
+  margin:auto;
+  padding:70px 25px;
 }
 
 .articles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 35px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+  gap:35px;
 }
 
 .article-preview {
-  background: #020617;
-  padding: 22px;
-  border-radius: 14px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  background:#020617;
+  padding:22px;
+  border-radius:14px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.35);
 }
 
 .article-preview img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 18px;
+  width:100%;
+  border-radius:12px;
+  margin-bottom:18px;
 }
 
-.article-preview h2 {
-  font-size: 22px;
-  margin-bottom: 12px;
-}
+.article-preview h2 { font-size:22px; margin-bottom:12px; }
+.article-preview p { color:#d1d5db; font-size:15px; }
 
-.article-preview p {
-  color: #d1d5db;
-  font-size: 15px;
-}
-
-/* FOOTER */
 footer {
-  background: #020617;
-  text-align: center;
-  padding: 28px;
-  color: #9ca3af;
+  background:#020617;
+  text-align:center;
+  padding:28px;
+  color:#9ca3af;
 }
 </style>
 </head>
@@ -141,9 +116,9 @@ footer {
     <div class="logo">TechPulse News</div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">Privacy</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
     </nav>
   </div>
 </header>
@@ -151,35 +126,39 @@ footer {
 <section class="hero">
   <div class="hero-content">
     <h1>Latest Technology, Mobile & Security News</h1>
-    <p>Trusted updates on smartphones, Android security, Samsung Galaxy leaks, and future technology.</p>
+    <p>Samsung Galaxy leaks, Android security alerts, AI innovation and smartphone trends.</p>
   </div>
 </section>
 
-<section class="container">
-  <div class="articles-grid">
+<main class="container">
+  <section class="articles-grid">
 
-    <!-- Samsung Article -->
-    <div class="article-preview">
+    <!-- ARTICLE 1 -->
+    <article class="article-preview">
       <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf" alt="Samsung Galaxy smartphone">
       <h2>Galaxy S26 Pricing Leaks: Europe Faces Major Price Hike</h2>
-      <p>
-        New leaks suggest Samsung may increase Galaxy S26 prices in Europe, with some models seeing a €180 jump.
-      </p>
+      <p>Leaks suggest Samsung may raise Galaxy S26 prices in Europe, with some models increasing by €180.</p>
       <a class="btn" href="galaxy-s26.html">Read More</a>
-    </div>
+    </article>
 
-    <!-- Android Security Article -->
-    <div class="article-preview">
-      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Android phone security">
+    <!-- ARTICLE 2 -->
+    <article class="article-preview">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Android phone security alert">
       <h2>Android Security Alert: Over 40% Phones at Risk</h2>
-      <p>
-        Google warns billions of Android users that outdated phones are no longer protected from malware.
-      </p>
+      <p>Google warns that billions of Android phones no longer receive security updates and remain exposed.</p>
       <a class="btn" href="android-security.html">Read More</a>
-    </div>
+    </article>
 
-  </div>
-</section>
+    <!-- ARTICLE 3 (RESTORED) -->
+    <article class="article-preview">
+      <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" alt="Artificial intelligence technology">
+      <h2>How Artificial Intelligence Is Reshaping Modern Technology</h2>
+      <p>AI is transforming smartphones, cybersecurity, cloud computing, and how users interact with technology.</p>
+      <a class="btn" href="ai-technology.html">Read More</a>
+    </article>
+
+  </section>
+</main>
 
 <footer>
   © 2026 TechPulse News · All Rights Reserved
