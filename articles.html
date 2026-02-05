@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Articles – TechPulse News</title>
+  <meta name="description" content="Browse all technology news articles, curated stories, and tech insights from TechPulse News.">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #0b0f19;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, #1a1f35 0%, #16213e 100%);
+      padding: 50px 25px;
+      text-align: center;
+      border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+    }
+
+    .page-header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .page-header p {
+      font-size: 16px;
+      color: #d1d5db;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px 25px;
+    }
+
+    /* Filter & Search Section */
+    .filters-section {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      align-items: center;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 250px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 12px 16px;
+      background: #1f2937;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      border-radius: 6px;
+      color: #e5e7eb;
+      transition: border-color 0.3s;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: #2563eb;
+    }
+
+    .search-box input::placeholder {
+      color: #9ca3af;
+    }
+
+    .category-filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 10px 18px;
+      background: #1f2937;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      color: #e5e7eb;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #fff;
+    }
+
+    /* Articles Grid */
+    .articles-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .article-card {
+      background: #1f2937;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-card:hover {
+      transform: translateY(-8px);
+      border-color: #2563eb;
+      box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
+    }
+
+    .article-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 14px;
+      overflow: hidden;
+    }
+
+    .article-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .article-meta {
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(37, 99, 235, 0.2);
+      color: #2563eb;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .article-date {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .article-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .article-content h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .article-content p {
+      color: #d1d5db;
+      font-size: 14px;
+      margin-bottom: 15px;
+      flex: 1;
+      line-height: 1.6;
+    }
+
+    .article-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .read-more {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .read-more:hover {
+      color: #1d4ed8;
+    }
+
+    .article-views {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 60px;
+    }
+
+    .pagination a,
+    .pagination span {
+      padding: 10px 15px;
+      background: #1f2937;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      border-radius: 6px;
+      color: #e5e7eb;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .pagination a:hover {
+      background: #2563eb;
+      border-color: #2563eb;
+    }
+
+    .pagination .active {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #fff;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 25px;
+    }
+
+    .empty-state h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .empty-state p {
+      color: #9ca3af;
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 50px 25px;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #9ca3af;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #2563eb;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 28px;
+      }
+
+      .filters-section {
+        flex-direction: column;
+      }
+
+      .search-box {
+        min-width: 100%;
+      }
+
+      .articles-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .category-filters {
+        width: 100%;
+      }
+
+      nav {
+        gap: 15px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+  <div class="nav-container">
+    <a href="Tech News" class="logo">🔌 TechPulse</a>
+    <nav>
+      <a href="Tech News">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Page Header -->
+<section class="page-header">
+  <h1>All Articles</h1>
+  <p>Browse our complete collection of technology news and insights</p>
+</section>
+
+<!-- Main Content -->
+<section class="container">
+  <!-- Filters & Search -->
+  <div class="filters-section">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search articles...">
+    </div>
+    <div class="category-filters">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="AI">AI & ML</button>
+      <button class="filter-btn" data-category="Security">Security</button>
+      <button class="filter-btn" data-category="Mobile">Mobile</button>
+      <button class="filter-btn" data-category="Cloud">Cloud</button>
+    </div>
+  </div>
+
+  <!-- Articles Grid -->
+  <div class="articles-container" id="articlesGrid">
+    <!-- Article 1 -->
+    <div class="article-card" data-category="AI">
+      <div class="article-image">AI Article</div>
+      <div class="article-meta">
+        <span class="article-category">AI & ML</span>
+        <span class="article-date">Feb 5, 2026</span>
+      </div>
+      <div class="article-content">
+        <h3>GPT-5 Released: Revolutionary AI Model Changes the Game</h3>
+        <p>Groundbreaking new language model exceeds previous capabilities with enhanced reasoning and real-time learning abilities.</p>
+        <div class="article-footer">
+          <a href="#" class="read-more">Read Full Article →</a>
+          <span class="article-views">2.3K views</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 2 -->
+    <div class="article-card" data-category="Security">
+      <div class="article-image">Security Article</div>
+      <div class="article-meta">
+        <span class="article-category">Security</span>
+        <span class="article-date">Feb 4, 2026</span>
+      </div>
+      <div class="article-content">
+        <h3>Major Vulnerability Found in Enterprise VPN Systems</h3>
+        <p>Security researchers discover critical flaw affecting millions of corporate networks worldwide. Patches available immediately.</p>
+        <div class="article-footer">
+          <a href="#" class="read-more">Read Full Article →</a>
+          <span class="article-views">5.8K views</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 3 -->
+    <div class="article-card" data-category="Mobile">
+      <div class="article-image">Mobile Article</div>
+      <div class="article-meta">
+        <span class="article-category">Mobile</span>
+        <span class="article-date">Feb 3, 2026</span>
+      </div>
+      <div class="article-content">
+        <h3>iPhone 17 Specifications Leaked: What to Expect</h3>
+        <p>Exclusive details on Apple's upcoming flagship phone reveal faster processors and improved battery technology.</p>
+        <div class="article-footer">
+          <a href="#" class="read-more">Read Full Article →</a>
+          <span class="article-views">12.1K views</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 4 -->
+    <div class="article-card" data-category="Cloud">
+      <div class="article-image">Cloud Article</div>
+      <div class="article-meta">
+        <span class="article-category">Cloud</span>
+        <span class="article-date">Feb 2, 2026</span>
+      </div>
+      <div class="article-content">
+        <h3>AWS Launches Quantum Computing Service</h3>
+        <p>Amazon Web Services introduces quantum computing capabilities for enterprise customers, democratizing quantum access.</p>
+        <div class="article-footer">
+          <a href="#" class="read-more">Read Full Article →</a>
+          <span class="article-views">8.2K views</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 5 -->
+    <div class="article-card" data-category="AI">
+      <div class="article-image">AI Article</div>
+      <div class="article-meta">
+        <span class="article-category">AI & ML</span>
+        <span class="article-date">Feb 1, 2026</span>
+      </div>
+      <div class="article-content">
+        <h3>AI-Powered Cybersecurity: The Future of Defense</h3>
+        <p>Machine learning algorithms now detect and prevent cyber attacks faster than human security teams.</p>
+        <div class="article-footer">
+          <a href="#" class="read-more">Read Full Article →</a>
+          <span class="article-views">4.5K views</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 6 -->
+    <div class="article-card" data-category="Mobile">
+      <div class="article-image">Mobile Article</div>
+      <div class="article-meta">
+        <span class="article-category">Mobile</span>
+        <span class="article-date">Jan 31, 2026</span>
+      </div>
+      <div class="article-content">
+        <h3>Samsung Galaxy Tab S10 Announced</h3>
+        <p>New tablet features groundbreaking display technology and AI-powered stylus capabilities.</p>
+        <div class="article-footer">
+          <a href="#" class="read-more">Read Full Article →</a>
+          <span class="article-views">3.9K views</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 7 -->
+    <div class="article-card" data-category="Security">
+      <div class="article-image">Security Article</div>
+      <div class="article-meta">
+        <span class="article-category">Security</span>
+        <span class="article-date">Jan 30, 2026</span>
+      </div>
+      <div class="article-content">
+        <h3>Biometric Authentication: The New Standard</h3>
+        <p>Major tech companies adopt advanced biometric systems for improved security and user convenience.</p>
+        <div class="article-footer">
+          <a href="#" class="read-more">Read Full Article →</a>
+          <span class="article-views">6.1K views</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 8 -->
+    <div class="article-card" data-category="Cloud">
+      <div class="article-image">Cloud Article</div>
+      <div class="article-meta">
+        <span class="article-category">Cloud</span>
+        <span class="article-date">Jan 29, 2026</span>
+      </div>
+      <div class="article-content">
+        <h3>Edge Computing Adoption Surges in 2026</h3>
+        <p>Businesses migrate workloads to edge infrastructure for lower latency and improved performance.</p>
+        <div class="article-footer">
+          <a href="#" class="read-more">Read Full Article →</a>
+          <span class="article-views">7.3K views</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 9 -->
+    <div class="article-card" data-category="AI">
+      <div class="article-image">AI Article</div>
+      <div class="article-meta">
+        <span class="article-category">AI & ML</span>
+        <span class="article-date">Jan 28, 2026</span>
+      </div>
+      <div class="article-content">
+        <h3>Neural Networks Now Understand Context Better</h3>
+        <p>New AI architecture breakthrough enables machines to understand nuanced human language and context.</p>
+        <div class="article-footer">
+          <a href="#" class="read-more">Read Full Article →</a>
+          <span class="article-views">9.7K views</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <span class="active">1</span>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">→</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="Tech News">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <p>&copy; 2026 TechPulse News. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Filter functionality
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const articleCards = document.querySelectorAll('.article-card');
+  const searchInput = document.getElementById('searchInput');
+
+  function filterArticles() {
+    const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
+    const searchTerm = searchInput.value.toLowerCase();
+
+    articleCards.forEach(card => {
+      const cardCategory = card.dataset.category;
+      const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+      const cardText = card.querySelector('p').textContent.toLowerCase();
+
+      const matchesCategory = activeCategory === 'all' || cardCategory === activeCategory;
+      const matchesSearch = cardTitle.includes(searchTerm) || cardText.includes(searchTerm);
+
+      card.style.display = matchesCategory && matchesSearch ? '' : 'none';
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterArticles();
+    });
+  });
+
+  searchInput.addEventListener('input', filterArticles);
+</script>
+
+</body>
+</html>
