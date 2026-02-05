@@ -2,162 +2,497 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TechPulse News – Latest Technology & Mobile News</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TechPulse News delivers the latest technology news, Android updates, Samsung leaks, cybersecurity alerts, and networking research articles.">
-
+  <title>TechPulse News – Latest Technology & Innovation</title>
+  <meta name="description" content="Stay updated with the latest technology news, product launches, cybersecurity insights, and industry trends.">
+  
   <!-- Open Graph -->
-  <meta property="og:title" content="TechPulse News – Technology Updates">
-  <meta property="og:description" content="Latest tech news, Android security alerts, Samsung leaks, and in-depth research articles.">
+  <meta property="og:title" content="TechPulse News – Latest Tech Updates">
+  <meta property="og:description" content="Your source for breaking technology news and industry insights.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://s60930693-debug.github.io/TechNews/">
-
-  <!-- SEO -->
-  <link rel="canonical" href="https://s60930693-debug.github.io/TechNews/">
-
+  
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-    body { background:#0b0f19; color:#fff; line-height:1.7; }
+    body {
+      background: #0b0f19;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
 
+    /* Header & Navigation */
     header {
       position: sticky;
       top: 0;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0, 0, 0, 0.95);
       backdrop-filter: blur(10px);
       z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .nav {
+    .nav-container {
       max-width: 1200px;
-      margin:auto;
-      padding:16px 25px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+      margin: 0 auto;
+      padding: 16px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
     }
 
     nav a {
-      color:#fff;
-      margin-left:20px;
-      text-decoration:none;
+      color: #e5e7eb;
+      text-decoration: none;
+      transition: color 0.3s;
     }
 
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* Hero Section */
     .hero {
-      min-height: 85vh;
-      background:
-      linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
-      url('https://images.unsplash.com/photo-1518770660439-4636190af475')
-      center/cover no-repeat;
-      display:flex;
-      align-items:center;
+      min-height: 90vh;
+      background: linear-gradient(135deg, #1a1f35 0%, #16213e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: 50%;
+      top: 10%;
+      right: 5%;
+      filter: blur(60px);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(37, 99, 235, 0.05);
+      border-radius: 50%;
+      bottom: 10%;
+      left: 5%;
+      filter: blur(60px);
     }
 
     .hero-content {
-      max-width: 900px;
-      margin:auto;
-      padding:60px 25px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 25px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
-    .hero h1 { font-size:42px; }
-
-    .container {
-      max-width:1100px;
-      margin:auto;
-      padding:70px 25px;
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #fff, #9ca3af);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .articles-grid {
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap:40px;
+    .hero p {
+      font-size: 20px;
+      color: #d1d5db;
+      margin-bottom: 30px;
     }
 
-    .article-preview img {
-      width:100%;
-      border-radius:12px;
-      margin:15px 0;
+    .cta-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .btn {
-      display:inline-block;
-      padding:12px 26px;
-      background:#2563eb;
-      color:#fff;
-      text-decoration:none;
-      border-radius:6px;
-      margin-top:10px;
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      cursor: pointer;
     }
 
+    .btn-primary {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #2563eb;
+      border: 2px solid #2563eb;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(37, 99, 235, 0.1);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 70px 25px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    /* Featured Articles */
+    .featured-articles {
+      background: #111827;
+      padding: 50px;
+      border-radius: 12px;
+      margin-bottom: 60px;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .article-card {
+      background: #1f2937;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .article-card:hover {
+      transform: translateY(-5px);
+      border-color: #2563eb;
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+    }
+
+    .article-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .article-content {
+      padding: 25px;
+    }
+
+    .article-content h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .article-content p {
+      color: #9ca3af;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .read-more {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .read-more:hover {
+      color: #1d4ed8;
+    }
+
+    /* Features Section */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 30px;
+      background: rgba(37, 99, 235, 0.05);
+      border-radius: 8px;
+      border: 1px solid rgba(37, 99, 235, 0.2);
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    /* Newsletter Section */
+    .newsletter {
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      padding: 50px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .newsletter h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .newsletter p {
+      font-size: 16px;
+      margin-bottom: 25px;
+      opacity: 0.95;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      min-width: 200px;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #0b0f19;
+    }
+
+    .newsletter-form input::placeholder {
+      color: #6b7280;
+    }
+
+    .newsletter-form .btn {
+      white-space: nowrap;
+    }
+
+    /* Footer */
     footer {
-      background:#020617;
-      text-align:center;
-      padding:30px;
-      color:#9ca3af;
+      background: #020617;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 50px 25px;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #9ca3af;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #2563eb;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      nav {
+        gap: 15px;
+        font-size: 14px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .featured-articles {
+        padding: 30px;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form input {
+        min-width: auto;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- Header -->
 <header>
-  <div class="nav">
-    <div><strong>TechPulse News</strong></div>
+  <div class="nav-container">
+    <div class="logo">🔌 TechPulse</div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">Privacy</a>
+      <a href="#home">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
+<!-- Hero Section -->
+<section class="hero" id="home">
   <div class="hero-content">
-    <h1>Latest Technology News & Research</h1>
-    <p>Trusted updates on Android security, Samsung leaks, and modern networking research.</p>
+    <h1>Stay Ahead in Tech</h1>
+    <p>Breaking news, insights, and trends from the world of technology</p>
+    <div class="cta-buttons">
+      <button class="btn btn-primary">Read Latest News</button>
+      <button class="btn btn-secondary">Learn More</button>
+    </div>
   </div>
 </section>
 
+<!-- Featured Articles -->
 <section class="container">
+  <div class="featured-articles">
+    <h2 class="section-title">Featured Stories</h2>
+    <div class="articles-grid">
+      <div class="article-card">
+        <div class="article-image">Featured Article 1</div>
+        <div class="article-content">
+          <h3>Latest Breakthroughs in AI</h3>
+          <p>Discover the most recent advancements in artificial intelligence and machine learning technologies.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
 
-  <!-- AdSense Placeholder -->
-  <div style="margin:30px 0; background:#111; padding:20px; text-align:center;">
-    Google AdSense Ad Placement
+      <div class="article-card">
+        <div class="article-image">Featured Article 2</div>
+        <div class="article-content">
+          <h3>Cybersecurity Alert</h3>
+          <p>Important security updates and best practices to protect your digital presence online.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-image">Featured Article 3</div>
+        <div class="article-content">
+          <h3>Mobile Innovation Report</h3>
+          <p>Explore the latest smartphone technologies and upcoming mobile device announcements.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="articles-grid">
+  <!-- Features Section -->
+  <div>
+    <h2 class="section-title">Why Choose TechPulse</h2>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3>Real-Time Updates</h3>
+        <p>Get the latest tech news as it happens, delivered instantly to your inbox.</p>
+      </div>
 
-    <!-- Article 1 -->
-    <div class="article-preview">
-      <h2>Galaxy S26 Pricing Leak: Europe Faces a Samsung Tax</h2>
-      <img src="assets/images/galaxy-s26.jpg" alt="Samsung Galaxy S26" loading="lazy">
-      <p>Leaks suggest Samsung may increase Galaxy S26 prices by up to €180 in Europe.</p>
-      <a class="btn" href="article-galaxy-s26.html">Read More</a>
+      <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <h3>Curated Content</h3>
+        <p>Expert journalists filter and verify every story for accuracy and relevance.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <h3>Trusted Source</h3>
+        <p>Dependable, fact-checked reporting from industry experts and analysts.</p>
+      </div>
     </div>
-
-    <!-- Article 2 -->
-    <div class="article-preview">
-      <h2>Android Security Alert: 40% of Phones at Risk</h2>
-      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Android security warning" loading="lazy">
-      <p>Google confirms billions of Android phones are exposed due to missing updates.</p>
-      <a class="btn" href="article-android-security.html">Read More</a>
-    </div>
-
-    <!-- Article 3 -->
-    <div class="article-preview">
-      <h2>When Automation Breaks: Modern Networking Research</h2>
-      <img src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2" alt="Networking research" loading="lazy">
-      <p>Why fragile automation is breaking reproducible networking experiments.</p>
-      <a class="btn" href="article-automation-research.html">Read More</a>
-    </div>
-
   </div>
 </section>
 
+<!-- Newsletter -->
+<section class="container">
+  <div class="newsletter">
+    <h2>Never Miss Breaking Tech News</h2>
+    <p>Subscribe to our newsletter for daily tech updates delivered to your inbox</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer>
-  © 2026 TechPulse News · All Rights Reserved
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="SECURITY.md">Security</a>
+    </div>
+    <p>&copy; 2026 TechPulse News. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>
