@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article – TechPulse News</title>
+  <meta name="description" content="Read full tech article.">
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
+    body {background:#0b0f19;color:#e5e7eb;line-height:1.7;}
+    header{position:sticky;top:0;background:rgba(0,0,0,0.95);backdrop-filter:blur(10px);z-index:1000;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .nav-container{max-width:1200px;margin:auto;padding:16px 25px;display:flex;justify-content:space-between;align-items:center;}
+    .logo{font-size:20px;font-weight:700;color:#2563eb;}
+    nav{display:flex;gap:25px;}
+    nav a{color:#e5e7eb;text-decoration:none;transition:color 0.3s;}
+    nav a:hover{color:#2563eb;}
+    .container{max-width:800px;margin:auto;padding:70px 25px;}
+    h1{font-size:36px;margin-bottom:20px;}
+    img{width:100%;margin-bottom:25px;border-radius:8px;}
+    p{margin-bottom:15px;color:#d1d5db;}
+    footer{background:#020617;padding:40px 20px;text-align:center;color:#9ca3af;border-top:1px solid rgba(255,255,255,0.1);}
+    footer a{color:#9ca3af;margin:0 10px;text-decoration:none;}
+    footer a:hover{color:#2563eb;}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo">🔌 TechPulse</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="container" id="article-container">
+</section>
+
+<footer>
+  <p>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="privacy.html">Privacy</a>
+  </p>
+  <p>© 2026 TechPulse News</p>
+</footer>
+
+<script src="js/articles.js"></script>
+<script>
+  const container = document.getElementById("article-container");
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get("id"));
+  const article = articlesData.find(a => a.id === id);
+
+  if(article){
+    container.innerHTML = `
+      <h1>${article.title}</h1>
+      <img src="${article.image}" alt="${article.title}">
+      ${article.content}
+    `;
+  } else {
+    container.innerHTML = "<p>Article not found.</p>";
+  }
+</script>
+
+</body>
+</html>
